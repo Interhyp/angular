@@ -1,0 +1,28 @@
+{
+  "name": "@interhyp/thousands-separator",
+  "description": "Interhyp thousands-separator",
+  "version": "1.0.0",
+  "author": "Interhyp AG",
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "Angular",
+    "Angular-cli",
+    "thousands-separator",
+    "library-demo"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "peerDependencies": {
+    "@angular/core": "^5.2.8",
+    "@angular/forms": "^5.2.8",
+    "@angular/platform-browser": "^5.2.8"
+  },
+  "ngPackage": {
+    "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+    "lib": {
+      "entryFile": "public_api.ts"
+    }
+  }
+}

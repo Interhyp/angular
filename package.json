@@ -27,7 +27,7 @@
     "karma-typescript": "^3.0.12"
   },
   "scripts": {
-    "build": "ng-packagr -p ./packages/thousands-separator/package.json",
-    "clean-all": "ts-node fuse.ts clean-all"
+    "build-module": "ts-node fuse.ts build-module",
+    "build-all-modules": "ts-node fuse.ts build-all-modules"
   }
 }

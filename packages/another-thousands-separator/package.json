@@ -1,7 +1,7 @@
 {
-  "name": "@interhyp/thousands-separator",
+  "name": "another-thousands-separator",
   "description": "Interhyp thousands-separator",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Interhyp AG",
   "license": "MIT",
   "private": false,
@@ -11,9 +11,6 @@
     "thousands-separator",
     "library-demo"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "peerDependencies": {
     "@angular/core": "^5.2.8",
     "@angular/forms": "^5.2.8",

@@ -1,49 +1,48 @@
-import { task } from "fuse-box/sparky";
+import { npmPublish, task } from "fuse-box/sparky";
 import { ngPackagr } from "ng-packagr";
-
-const registeredModules: string[] = [
-  'ih-thousands-separator',
-  'another-thousands-separator'
-];
+import * as fs from "fs";
+import * as path from "path";
 
 const MODULES_ROOT_PATH: string = "./packages/";
-const NG_PACKAGE_PATH: string = "/package.json";
+const PACKAGE_JSON_PATH: string = "/package.json";
+const DIST_PATH: string = "/dist";
 
-const AVAILABLE_TASKS = {
+const TASK = {
   BUILD_MODULE: "build-module",
-  BUILD_ALL_MODULES: "build-all-modules"
+  BUILD_ALL_MODULES: "build-all-modules",
+  PUBLISH_ALL_MODULES: "publish-all-modules"
 };
 
-task("clean-all", () => {
-  console.log("cleaning-all");
-  console.log(process.argv[process.argv.length - 1]);
-});
+const allModules: Function = (modulesRootPath: string) => fs
+  .readdirSync(modulesRootPath)
+  .filter(file => fs.statSync(path.join(modulesRootPath, file)).isDirectory());
 
-task(AVAILABLE_TASKS.BUILD_MODULE, async() => {
-  let moduleName: string = process.argv[process.argv.length - 1];
-  let moduleIsRegistered: boolean = registeredModules
-    .some(registeredModuleName => registeredModuleName === moduleName);
-
-  if (!moduleIsRegistered) {
-    throw new Error(`This module is not registered.`);
-  } else if (moduleName === "build-module") {
-    throw new Error("No module name provided.");
-  }
-
-  await ngPackagr()
-    .forProject(MODULES_ROOT_PATH + moduleName + NG_PACKAGE_PATH)
+const buildPackage: Function = (moduleName: string) => {
+  return ngPackagr()
+    .forProject(MODULES_ROOT_PATH + moduleName + PACKAGE_JSON_PATH)
     .build()
     .then(() => {
       console.info(`Bundled module: '${moduleName}'`);
     });
+};
+
+task(TASK.BUILD_MODULE, async() => {
+  let moduleName: string = process.argv[process.argv.length - 1];
+  if (moduleName === "build-module") {
+    throw new Error("No module name provided.");
+  }
+
+  await buildPackage(moduleName);
 });
 
-task(AVAILABLE_TASKS.BUILD_ALL_MODULES, () => {
-  registeredModules.forEach( (moduleName: string) => {
-    return ngPackagr().forProject(MODULES_ROOT_PATH + moduleName + NG_PACKAGE_PATH)
-      .build()
-      .then( () => {
-        console.info(`Bundled module: '${moduleName}'`)
-      })
+task(TASK.BUILD_ALL_MODULES, () => {
+  allModules(MODULES_ROOT_PATH).forEach( (moduleName: string) => {
+    return buildPackage(moduleName);
+  });
+});
+
+task(TASK.PUBLISH_ALL_MODULES, () => {
+  allModules(MODULES_ROOT_PATH).forEach((moduleName: string) => {
+    return npmPublish({ path: MODULES_ROOT_PATH + moduleName + DIST_PATH});
   });
 });

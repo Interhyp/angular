@@ -50,6 +50,7 @@ export class ThousandsSeparatorDemoComponent implements OnInit {
 ```
 
 IhPriceFormatterDirective:
+
 __Hint: It is important to have the FormsModule from @angular/core imported.__
 ```html
 <form>

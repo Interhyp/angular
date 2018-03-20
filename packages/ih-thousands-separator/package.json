@@ -1,7 +1,7 @@
 {
   "name": "ih-thousands-separator",
   "description": "Interhyp Angular Modules: thousands-separator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Interhyp AG",
   "license": "MIT",
   "private": false,

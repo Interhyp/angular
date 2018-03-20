@@ -24,7 +24,7 @@ $>yarn add [module-name]
 | ...                     | ...     | ...
 
 ## Demo ##
-An example project with all modules included can be found [here](https://stackblitz.com/edit/interhyp-angular-modules) at StackBlitz.
+An example project with all modules included can be found [here](https://stackblitz.com/edit/interhyp-angular-modules).
 
 ## Licence ##
 MIT

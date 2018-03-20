@@ -1,6 +1,6 @@
 {
   "name": "ih-thousands-separator",
-  "description": "Interhyp thousands-separator",
+  "description": "Interhyp Angular Modules: thousands-separator",
   "version": "0.0.1",
   "author": "Interhyp AG",
   "license": "MIT",
@@ -8,8 +8,7 @@
   "keywords": [
     "Angular",
     "Angular-cli",
-    "thousands-separator",
-    "library-demo"
+    "thousands-separator"
   ],
   "peerDependencies": {
     "@angular/core": "^5.2.8",

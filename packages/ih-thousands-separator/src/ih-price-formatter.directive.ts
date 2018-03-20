@@ -1,5 +1,4 @@
 /**
- * Created by mhaug on 05.05.2017.
  *
  * Formats the value of input into format declared in PricePipe
  *

@@ -1,5 +1,4 @@
 /**
- * Created by mhaug on 05.05.2017.
  *
  * Describes the desired format of price values
  * Can be used in html as

@@ -1,10 +1,18 @@
 {
   "name": "ih-thousands-separator",
   "description": "Interhyp Angular Modules: thousands-separator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Interhyp AG",
   "license": "MIT",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Interhyp/angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Interhyp/angular/issues"
+  },
+  "homepage": "https://github.com/Interhyp/angular",
   "keywords": [
     "Angular",
     "Angular-cli",

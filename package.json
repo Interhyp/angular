@@ -1,8 +1,16 @@
 {
-  "name": "angular-modules",
+  "name": "interhyp-angular-modules",
   "version": "1.0.0",
   "license": "MIT",
-  "private": true,
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Interhyp/angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Interhyp/angular/issues"
+  },
+  "homepage": "https://github.com/Interhyp/angular",
   "dependencies": {},
   "devDependencies": {
     "@angular/common": "^5.2.8",

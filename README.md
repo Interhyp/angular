@@ -20,7 +20,7 @@ $>yarn add [module-name]
 ## Available modules ##
 | Name                    | Version | Description
 | :---                    |:-------:| :---
-| ih-thousands-separator  | 0.0.2   | A thousands-separator directive and a price-pipe included
+| ih-thousands-separator  | 0.0.3   | A thousands-separator directive and a price-pipe included
 | ...                     | ...     | ...
 
 ## Demo ##

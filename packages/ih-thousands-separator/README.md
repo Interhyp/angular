@@ -13,12 +13,13 @@ $>yarn add ih-thousands-separator
 After installation register the module within the application:
 ```javascript
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 import { ThousandsSeparatorDemoComponent } from './thousands-separator-demo.component';
 
 import { IhThousandsSeparatorModule } from 'ih-thousands-separator';
 
 @NgModule({
-  imports: [ IhThousandsSeparatorModule ],
+  imports: [ FormsModule, IhThousandsSeparatorModule ],
   declarations: [ ThousandsSeparatorDemoComponent ],
   exports: [ ThousandsSeparatorDemoComponent ]
 })
